@@ -76,16 +76,17 @@
   left: 100%;
 }
 
-.social-logo {
+.social-icon {
   width: 24px;
   height: 24px;
-  object-fit: contain;
+  color: #b0b0b0;
   transition: all 0.3s ease;
 }
 
-.social-link:hover .social-logo {
+.social-link:hover .social-icon {
+  color: #FFD700;
   transform: scale(1.1);
-  filter: brightness(1.2);
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.3));
 }
 
 .footer p {
