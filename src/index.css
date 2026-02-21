@@ -4,29 +4,29 @@
 
 /* Custom CSS Variables */
 :root {
-  --primary-color: #FFD700;
-  --secondary-color: #000000;
-  --accent-color: #FFA500;
-  --text-color: #ffffff;
-  --light-text: #e0e0e0;
-  --background-color: #0a0a0a;
-  --card-background: #1a1a1a;
-  --border-color: #333333;
-  --gradient-primary: linear-gradient(135deg, #FFD700, #FFA500);
-  --gradient-dark: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+  --primary-color: #8B7355;
+  --secondary-color: #A08C6E;
+  --accent-color: #D4AF37;
+  --text-color: #3A3A3A;
+  --light-text: #5A5A5A;
+  --background-color: #FFFFFF;
+  --card-background: #F8F8F3;
+  --border-color: #E5E5D8;
+  --gradient-primary: linear-gradient(135deg, #8B7355, #A08C6E);
+  --gradient-light: linear-gradient(135deg, #FFFFFF, #F8F8F3);
 }
 
 /* Base Styles */
 body {
-  @apply bg-black text-white font-inter;
+  @apply bg-white text-gray-800 font-inter;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   background: var(--background-color);
   background-image: 
-    radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 165, 0, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 80%, rgba(255, 215, 0, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, rgba(139, 115, 85, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(160, 140, 110, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(139, 115, 85, 0.02) 0%, transparent 50%);
 }
 
 /* Container */
@@ -36,9 +36,10 @@ body {
 
 /* Navigation */
 .navbar {
-  @apply bg-black/80 backdrop-blur-lg fixed w-full top-0 z-50 border-b border-yellow-500/20;
-  background: rgba(0, 0, 0, 0.9);
+  @apply bg-white/80 backdrop-blur-lg fixed w-full top-0 z-50 border-b border-stone-300/30;
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(139, 115, 85, 0.05);
 }
 
 .nav-logo h2 {
@@ -54,13 +55,13 @@ body {
 }
 
 .nav-menu li a {
-  @apply text-gray-300 hover:text-yellow-400 transition-all duration-300 relative;
+  @apply text-gray-600 hover:text-stone-700 transition-all duration-300 relative;
   position: relative;
 }
 
 .nav-menu li a::after {
   content: '';
-  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300;
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-stone-600 transition-all duration-300;
 }
 
 .nav-menu li a:hover::after {
@@ -72,13 +73,13 @@ body {
 }
 
 .hamburger span {
-  @apply w-6 h-0.5 bg-yellow-400 transition-all duration-300;
+  @apply w-6 h-0.5 bg-stone-600 transition-all duration-300;
 }
 
 /* Hero Section */
 .hero {
   @apply min-h-screen flex items-center relative overflow-hidden;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8F8F3 50%, #F5F5F0 100%);
 }
 
 .particles {
@@ -86,9 +87,9 @@ body {
 }
 
 .particle {
-  @apply absolute w-1 h-1 bg-yellow-400 rounded-full;
+  @apply absolute w-1 h-1 bg-stone-400 rounded-full;
   animation: float 8s ease-in-out infinite;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  box-shadow: 0 0 10px rgba(139, 115, 85, 0.3);
 }
 
 @keyframes float {
@@ -98,7 +99,7 @@ body {
   }
   50% { 
     transform: translateY(-30px) rotate(180deg); 
-    opacity: 0.8;
+    opacity: 0.6;
   }
 }
 
@@ -108,48 +109,48 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+  text-shadow: 0 0 20px rgba(139, 115, 85, 0.2);
 }
 
 .hero-subtitle {
-  @apply text-xl md:text-2xl text-gray-300 mb-6;
-  color: #e0e0e0;
+  @apply text-xl md:text-2xl text-stone-600 mb-6;
+  color: #5A5A5A;
 }
 
 .hero-description {
-  @apply text-lg text-gray-400 mb-8 max-w-2xl;
-  color: #b0b0b0;
+  @apply text-lg text-stone-500 mb-8 max-w-2xl;
+  color: #6B6B6B;
   line-height: 1.6;
 }
 
 /* Buttons */
 .btn {
   @apply px-8 py-4 rounded-full font-semibold transition-all duration-300 inline-block transform hover:scale-105;
-  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(139, 115, 85, 0.15);
 }
 
 .btn-primary {
-  @apply text-black;
+  @apply text-white;
   background: var(--gradient-primary);
   border: 2px solid transparent;
 }
 
 .btn-primary:hover {
-  box-shadow: 0 6px 25px rgba(255, 215, 0, 0.4);
+  box-shadow: 0 6px 25px rgba(139, 115, 85, 0.25);
   transform: translateY(-2px);
 }
 
 .btn-secondary {
-  @apply border-2 text-yellow-400;
-  border-color: #FFD700;
+  @apply border-2 text-stone-700;
+  border-color: #8B7355;
   background: transparent;
 }
 
 .btn-secondary:hover {
-  @apply text-black;
+  @apply text-white;
   background: var(--gradient-primary);
-  border-color: #FFD700;
-  box-shadow: 0 6px 25px rgba(255, 215, 0, 0.4);
+  border-color: #8B7355;
+  box-shadow: 0 6px 25px rgba(139, 115, 85, 0.25);
   transform: translateY(-2px);
 }
 
@@ -165,14 +166,14 @@ body {
 
 .section-title::after {
   content: '';
-  @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-yellow-400;
+  @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-stone-600;
   margin-top: 1rem;
 }
 
 /* Skills Section */
 .skills {
   @apply py-20;
-  background: var(--gradient-dark);
+  background: linear-gradient(135deg, #F8F8F3 0%, #F5F5F0 100%);
 }
 
 .slideshow-container {
@@ -180,10 +181,10 @@ body {
 }
 
 .slide {
-  @apply rounded-2xl p-8 border border-yellow-500/20;
-  background: rgba(26, 26, 26, 0.8);
+  @apply rounded-2xl p-8 border border-stone-300/30;
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
-  box-shadow: 0 8px 32px rgba(255, 215, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(139, 115, 85, 0.08);
 }
 
 .skill-category h3 {
@@ -196,24 +197,24 @@ body {
 
 .skill-item {
   @apply flex items-center space-x-4 mb-6 p-3 rounded-lg;
-  background: rgba(255, 215, 0, 0.05);
+  background: rgba(139, 115, 85, 0.05);
   transition: all 0.3s ease;
 }
 
 .skill-item:hover {
-  background: rgba(255, 215, 0, 0.1);
+  background: rgba(139, 115, 85, 0.1);
   transform: translateX(5px);
 }
 
 .skill-item i {
-  @apply text-yellow-400 w-6;
+  @apply text-stone-600 w-6;
   font-size: 1.25rem;
 }
 
 /* Projects Section */
 .projects {
   @apply py-20;
-  background: #0a0a0a;
+  background: #FFFFFF;
 }
 
 .projects-grid {
@@ -221,21 +222,21 @@ body {
 }
 
 .project-card {
-  @apply rounded-2xl overflow-hidden border border-yellow-500/20;
+  @apply rounded-2xl overflow-hidden border border-stone-300/30;
   background: var(--card-background);
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(139, 115, 85, 0.08);
 }
 
 .project-card:hover {
   transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 12px 40px rgba(255, 215, 0, 0.2);
-  border-color: rgba(255, 215, 0, 0.4);
+  box-shadow: 0 12px 40px rgba(139, 115, 85, 0.15);
+  border-color: rgba(139, 115, 85, 0.3);
 }
 
 .project-image {
   @apply relative h-64 overflow-hidden;
-  background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+  background: linear-gradient(135deg, #F8F8F3, #F5F5F0);
 }
 
 .project-screenshot {
@@ -257,15 +258,15 @@ body {
 
 .tech-tag {
   @apply px-3 py-1 rounded-full text-sm font-medium;
-  background: rgba(255, 215, 0, 0.1);
-  color: #FFD700;
-  border: 1px solid rgba(255, 215, 0, 0.3);
+  background: rgba(139, 115, 85, 0.1);
+  color: #8B7355;
+  border: 1px solid rgba(139, 115, 85, 0.2);
 }
 
 /* Contact Section */
 .contact {
   @apply py-20;
-  background: var(--gradient-dark);
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8F8F3 50%, #F5F5F0 100%);
 }
 
 .contact-content {
@@ -277,38 +278,38 @@ body {
 }
 
 .form-group label {
-  @apply block text-gray-300 mb-2 font-medium;
-  color: #e0e0e0;
+  @apply block text-stone-700 mb-2 font-medium;
+  color: #5A5A5A;
 }
 
 .form-group input,
 .form-group textarea {
   @apply w-full rounded-xl px-4 py-3 border transition-all duration-300;
-  background: rgba(26, 26, 26, 0.8);
-  border-color: rgba(255, 215, 0, 0.2);
-  color: white;
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(139, 115, 85, 0.2);
+  color: #3A3A3A;
   backdrop-filter: blur(10px);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #FFD700;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+  border-color: #8B7355;
+  box-shadow: 0 0 20px rgba(139, 115, 85, 0.15);
 }
 
 .form-status {
   @apply mt-4 p-4 rounded-xl text-center font-medium;
-  background: rgba(255, 215, 0, 0.1);
-  border: 1px solid rgba(255, 215, 0, 0.3);
-  color: #FFD700;
+  background: rgba(139, 115, 85, 0.08);
+  border: 1px solid rgba(139, 115, 85, 0.2);
+  color: #5A5A5A;
 }
 
 /* Footer */
 .footer {
   @apply py-12;
-  background: #000000;
-  border-top: 1px solid rgba(255, 215, 0, 0.2);
+  background: linear-gradient(135deg, #F5F5F0 0%, #E5E5D8 100%);
+  border-top: 1px solid rgba(139, 115, 85, 0.2);
 }
 
 .social-links {
@@ -316,20 +317,20 @@ body {
 }
 
 .social-link {
-  @apply text-gray-400 transition-all duration-300 transform hover:scale-110;
+  @apply text-stone-500 transition-all duration-300 transform hover:scale-110;
   font-size: 1.5rem;
 }
 
 .social-link:hover {
-  color: #FFD700;
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  color: #8B7355;
+  text-shadow: 0 0 10px rgba(139, 115, 85, 0.3);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .nav-menu {
-    @apply fixed top-16 left-0 w-full bg-black/95 backdrop-blur-lg flex-col space-y-6 p-6 transform -translate-x-full transition-transform duration-300;
-    border-top: 1px solid rgba(255, 215, 0, 0.2);
+    @apply fixed top-16 left-0 w-full bg-white/95 backdrop-blur-lg flex-col space-y-6 p-6 transform -translate-x-full transition-transform duration-300;
+    border-top: 1px solid rgba(139, 115, 85, 0.2);
   }
   
   .nav-menu.active {
@@ -337,7 +338,7 @@ body {
   }
   
   .hamburger.active span:nth-child(1) {
-    @apply rotate-45 translate-y-2 bg-yellow-400;
+    @apply rotate-45 translate-y-2 bg-stone-600;
   }
   
   .hamburger.active span:nth-child(2) {
@@ -345,6 +346,6 @@ body {
   }
   
   .hamburger.active span:nth-child(3) {
-    @apply -rotate-45 -translate-y-2 bg-yellow-400;
+    @apply -rotate-45 -translate-y-2 bg-stone-600;
   }
 }

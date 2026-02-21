@@ -103,7 +103,7 @@ const Skills = () => {
   return (
     <section className="skills">
       <div className="container">
-        <h2 className="section-title">Skills</h2>
+        <h2 className="section-title"><i className="fas fa-cogs"></i> Skills</h2>
         
         <div className="skills-overview">
           <div className="overview-stats">

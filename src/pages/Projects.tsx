@@ -18,12 +18,14 @@ const Projects = () => {
     const fetchProjects = async () => {
       try {
         const response = await fetch('http://localhost:5000/api/projects');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
         const data = await response.json();
         setProjects(data);
       } catch (error) {
         console.error('Error fetching projects:', error);
-      } finally {
-        // Always set fallback data to ensure projects display
+        // Set fallback data if API fails
         setProjects([
           {
             id: 1,
@@ -42,6 +44,7 @@ const Projects = () => {
             github: 'https://github.com/yourusername/inventory-system'
           }
         ]);
+      } finally {
         setLoading(false);
       }
     };
@@ -107,7 +110,7 @@ const Projects = () => {
     return (
       <section className="projects">
         <div className="container">
-          <h2 className="section-title">Projects</h2>
+          <h2 className="section-title"><i className="fas fa-folder-open"></i> Projects</h2>
           <div className="loading">Loading projects...</div>
         </div>
       </section>
@@ -117,7 +120,7 @@ const Projects = () => {
   return (
     <section className="projects">
       <div className="container">
-        <h2 className="section-title">Projects</h2>
+        <h2 className="section-title"><i className="fas fa-folder-open"></i> Projects</h2>
         <div className="projects-grid">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
