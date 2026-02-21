@@ -95,10 +95,10 @@ const Skills = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      nextSlide();
+      setCurrentSlide((prev) => (prev + 1) % skills.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [skills.length]);
 
   return (
     <section className="skills">
